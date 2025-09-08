@@ -38,12 +38,12 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         )}
       >
-        <div className="p-8 text-white">
+        <div className="p-6 text-white">
           {/* Close Button */}
           <Button
             onClick={onClose}
             className={cn(
-              "mb-8 flex items-center gap-2 bg-white/10 border border-white/30 rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-500 ease-out transform",
+              "mb-6 flex items-center gap-2 bg-white/10 border border-white/30 rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-500 ease-out transform",
               isOpen ? "translate-y-0 opacity-100" : "translate-y-[-20px] opacity-0"
             )}
             style={{ transitionDelay: isOpen ? "200ms" : "0ms" }}
@@ -53,7 +53,7 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
           </Button>
 
           {/* Main Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Hero Section */}
             <div 
               className={cn(
@@ -66,12 +66,12 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
                 <SparklesIcon className="w-6 h-6 text-orange-400" />
                 <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Early Access</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-4xl font-black leading-tight">
                 Reserve Your Spot in<br />
                 the Future of Brand<br />
                 Management.
               </h1>
-              <p className="text-lg text-white/80 leading-relaxed max-w-[500px]">
+              <p className="text-base text-white/80 leading-relaxed max-w-[500px] font-medium">
                 Join the exclusive waitlist and be among the first to experience the next generation 
                 of creator tools and brand engagement platforms.
               </p>
@@ -154,7 +154,7 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
               )}
               style={{ transitionDelay: isOpen ? "700ms" : "0ms" }}
             >
-              <h2 className="text-2xl font-bold text-white">Early Access Benefits:</h2>
+              <h2 className="text-2xl font-black text-white">Early Access Benefits:</h2>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
@@ -162,8 +162,8 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
                     <CheckIcon className="w-4 h-4 text-green-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Priority Access</h3>
-                    <p className="text-white/70 text-sm">Be the first to access new features and tools before public release.</p>
+                    <h3 className="font-bold text-white mb-1">Priority Access</h3>
+                    <p className="text-white/70 text-sm font-medium">Be the first to access new features and tools before public release.</p>
                   </div>
                 </div>
 
@@ -172,8 +172,8 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
                     <ShieldIcon className="w-4 h-4 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Exclusive Pricing</h3>
-                    <p className="text-white/70 text-sm">Lock in special early-bird pricing with up to 50% off premium features.</p>
+                    <h3 className="font-bold text-white mb-1">Exclusive Pricing</h3>
+                    <p className="text-white/70 text-sm font-medium">Lock in special early-bird pricing with up to 50% off premium features.</p>
                   </div>
                 </div>
 
@@ -182,8 +182,8 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
                     <TrendingUpIcon className="w-4 h-4 text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Direct Influence</h3>
-                    <p className="text-white/70 text-sm">Shape the platform with your feedback and feature requests.</p>
+                    <h3 className="font-bold text-white mb-1">Direct Influence</h3>
+                    <p className="text-white/70 text-sm font-medium">Shape the platform with your feedback and feature requests.</p>
                   </div>
                 </div>
               </div>
