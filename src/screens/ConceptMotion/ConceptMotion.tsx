@@ -34,7 +34,7 @@ export const ConceptMotion = (): JSX.Element => {
       <div className="w-full max-w-[1512px] h-full relative" style={{ background: 'var(--color-background-base)' }}>
         <div className="relative h-full overflow-hidden">
           <video 
-            className="absolute inset-0 w-full h-full object-contain scale-75"
+            className="absolute inset-0 w-full h-full object-contain scale-50 sm:scale-75"
             autoPlay 
             loop 
             muted 
@@ -44,15 +44,15 @@ export const ConceptMotion = (): JSX.Element => {
           </video>
           <div className="absolute inset-0 bg-black/30"></div>
           {/* Header */}
-          <header className="flex w-full max-w-[1480px] items-center justify-between absolute top-4 left-4 right-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:0ms] z-10 transition-all duration-300 ease-out hover:translate-y-[-0.5rem]">
+          <header className="flex w-full items-center justify-between absolute top-4 left-4 right-4 px-2 sm:px-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:0ms] z-10 transition-all duration-300 ease-out hover:translate-y-[-0.5rem]">
             <img
-              className="w-[159.23px] h-8"
+              className="w-[120px] h-6 sm:w-[159.23px] sm:h-8"
               alt="Moguls Logo"
               src="https://c.animaapp.com/mfakhdk187JOQe/img/group-9.png"
             />
 
             <div 
-              className="flex flex-col items-center justify-center gap-2 px-1.5 py-1"
+              className="flex flex-col items-center justify-center gap-2 px-3 py-1 sm:px-1.5"
               style={{
                 borderRadius: 'var(--radius)',
                 background: 'rgba(36, 36, 36, 0.6)',
@@ -62,7 +62,7 @@ export const ConceptMotion = (): JSX.Element => {
             >
               <button 
                 onClick={handleOpenGetLinkPopup}
-                className="h-auto px-4 py-2 hover:scale-105 transition-all duration-200 ease-out"
+                className="h-auto px-3 py-2 sm:px-4 hover:scale-105 transition-all duration-200 ease-out"
                 style={{
                   borderRadius: 'var(--radius)',
                   background: 'transparent',
@@ -76,7 +76,7 @@ export const ConceptMotion = (): JSX.Element => {
                   e.currentTarget.style.background = 'transparent';
                 }}
               >
-                <span className="font-bold text-base leading-4">
+                <span className="font-bold text-sm sm:text-base leading-4">
                   Get Your Link
                 </span>
               </button>
@@ -85,7 +85,7 @@ export const ConceptMotion = (): JSX.Element => {
 
           {/* Video Preview Card */}
           <div 
-            className="absolute w-[300px] h-[170px] bottom-4 left-4 transition-all duration-300 ease-out hover:scale-105 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms] z-10"
+            className="absolute w-[250px] h-[140px] sm:w-[300px] sm:h-[170px] bottom-4 left-4 transition-all duration-300 ease-out hover:scale-105 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms] z-10"
             style={{
               borderRadius: 'var(--radius)',
               background: 'rgba(36, 36, 36, 0.6)',
@@ -103,16 +103,16 @@ export const ConceptMotion = (): JSX.Element => {
           >
             <div className="p-0 relative w-full h-full">
               <img
-                className="w-[284px] h-[154px] absolute top-[7px] left-[7px] object-cover"
+                className="w-[234px] h-[124px] sm:w-[284px] sm:h-[154px] absolute top-[7px] left-[7px] object-cover"
                 style={{ borderRadius: 'var(--radius)' }}
                 alt="Video Preview"
                 src="https://c.animaapp.com/mfakhdk187JOQe/img/rectangle-3.png"
               />
 
-              <div className="flex items-center gap-2 absolute bottom-3 left-4">
-                <PlayIcon className="w-5 h-5" style={{ color: 'var(--color-text-primary)' }} />
+              <div className="flex items-center gap-2 absolute bottom-2 left-3 sm:bottom-3 sm:left-4">
+                <PlayIcon className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: 'var(--color-text-primary)' }} />
                 <span 
-                  className="font-medium text-xs text-right tracking-wide leading-normal whitespace-nowrap"
+                  className="font-medium text-xs tracking-wide leading-normal whitespace-nowrap"
                   style={{ color: 'var(--color-text-primary)' }}
                 >
                   Watch Demo
@@ -123,7 +123,7 @@ export const ConceptMotion = (): JSX.Element => {
 
           {/* What is Moguls Button */}
           <div 
-            className="flex flex-col items-center justify-center gap-1 p-1 absolute bottom-40 right-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms] z-10"
+            className="flex flex-col items-center justify-center gap-1 p-1 absolute bottom-32 sm:bottom-40 right-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms] z-10"
             style={{
               borderRadius: 'var(--radius)',
               background: 'rgba(36, 36, 36, 0.6)',
@@ -133,7 +133,7 @@ export const ConceptMotion = (): JSX.Element => {
           >
             <button 
               onClick={handleOpenPopup}
-              className="h-auto flex items-center justify-center gap-1.5 px-4 py-2 hover:scale-105 transition-all duration-200 ease-out"
+              className="h-auto flex items-center justify-center gap-1.5 px-3 py-2 sm:px-4 hover:scale-105 transition-all duration-200 ease-out"
               style={{
                 borderRadius: 'var(--radius)',
                 background: 'transparent',
@@ -156,9 +156,9 @@ export const ConceptMotion = (): JSX.Element => {
 
 
           {/* Main Heading */}
-          <div className="absolute bottom-8 right-8 max-w-[700px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms] z-10 transition-all duration-300 ease-out hover:translate-y-[-0.5rem]">
+          <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-8 max-w-[280px] sm:max-w-[700px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms] z-10 transition-all duration-300 ease-out hover:translate-y-[-0.5rem]">
             <h1 
-              className="font-black text-[60px] text-right tracking-tight leading-[60px]"
+              className="font-black text-[32px] sm:text-[60px] text-right tracking-tight leading-[32px] sm:leading-[60px]"
               style={{ color: 'var(--color-text-primary)' }}
             >
               The First Operating <br />

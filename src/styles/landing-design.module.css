@@ -178,12 +178,18 @@
   background: rgba(36, 36, 36, 0.4);
   backdrop-filter: blur(12px);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1rem;
   border: 1px solid var(--color-border-subtle);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .benefitCard {
+    padding: 1.5rem;
+  }
 }
 
 .benefitCard::before {
@@ -220,15 +226,24 @@
 
 /* Icon container for benefit cards */
 .benefitIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   transition: all 0.3s ease;
   position: relative;
+}
+
+@media (min-width: 640px) {
+  .benefitIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
 }
 
 .benefitCard:hover .benefitIcon {
