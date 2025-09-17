@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'moguls-orange': '#ff9a00',
+        'moguls-pink': '#ff5757',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

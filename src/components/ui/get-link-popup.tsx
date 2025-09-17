@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { XIcon, CheckIcon, SparklesIcon, ShieldIcon, TrendingUpIcon } from "lucide-react";
+import { XIcon, CheckIcon, SparklesIcon, ShieldIcon, TrendingUpIcon, ZapIcon, CrownIcon, UsersIcon } from "lucide-react";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Select } from "./select";
 import { cn } from "../../lib/utils";
+import styles from "../../styles/landing-design.module.css";
 
 interface GetLinkPopupProps {
   isOpen: boolean;
@@ -34,47 +35,57 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
       {/* Backdrop - Only covers right side */}
       <div
         className={cn(
-          "fixed top-0 right-0 h-full w-full max-w-[700px] bg-black/70 backdrop-blur-md transition-all duration-700 ease-out z-50 overflow-y-auto",
+          "fixed top-0 right-0 h-full w-full max-w-[700px] backdrop-blur-md transition-all duration-700 ease-out z-50 overflow-y-auto",
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         )}
+        style={{ 
+          background: 'rgba(26, 26, 26, 0.4)',
+          backdropFilter: 'blur(20px)',
+          boxShadow: 'var(--shadow-2xl)'
+        }}
       >
-        <div className="p-6 text-white">
+        <div className="p-8" style={{ color: 'var(--color-text-primary)' }}>
           {/* Close Button */}
-          <Button
+          <button
             onClick={onClose}
             className={cn(
-              "mb-6 flex items-center gap-2 bg-white/10 border border-white/30 rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-500 ease-out transform",
+              "mb-12 flex items-center gap-3 transition-all duration-300 ease-out transform",
+              styles.buttonPrimary,
               isOpen ? "translate-y-0 opacity-100" : "translate-y-[-20px] opacity-0"
             )}
-            style={{ transitionDelay: isOpen ? "200ms" : "0ms" }}
+            style={{ 
+              transitionDelay: isOpen ? "200ms" : "0ms",
+              borderRadius: 'var(--radius)'
+            }}
           >
-            <XIcon className="w-4 h-4" />
-            <span className="text-sm font-medium">Close</span>
-          </Button>
+            <XIcon className="w-5 h-5" />
+            <span className="text-base font-medium">Close</span>
+          </button>
 
           {/* Main Content */}
-          <div className="space-y-6">
+          <div className="space-y-16">
             {/* Hero Section */}
             <div 
               className={cn(
-                "space-y-4 transition-all duration-700 ease-out transform",
+                "space-y-8 transition-all duration-700 ease-out transform",
                 isOpen ? "translate-y-0 opacity-100" : "translate-y-[20px] opacity-0"
               )}
               style={{ transitionDelay: isOpen ? "300ms" : "0ms" }}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <SparklesIcon className="w-6 h-6 text-orange-400" />
-                <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Early Access</span>
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <SparklesIcon className="w-6 h-6" style={{ color: 'var(--color-primary)' }} />
+                  <span className="font-light text-base tracking-wide" style={{ color: 'var(--color-text-secondary)' }}>Early Access</span>
+                </div>
+                <h1 className="text-4xl font-light leading-tight max-w-md" style={{ color: 'var(--color-text-primary)' }}>
+                  Reserve Your Spot in the Future of Brand Management.
+                </h1>
+                <div className={styles.accentLine} />
+                <p className="text-lg leading-relaxed font-light max-w-lg" style={{ color: 'var(--color-text-secondary)' }}>
+                  Join the exclusive waitlist and be among the first to experience the next generation 
+                  of creator tools and brand engagement platforms.
+                </p>
               </div>
-              <h1 className="text-3xl md:text-4xl font-black leading-tight">
-                Reserve Your Spot in<br />
-                the Future of Brand<br />
-                Management.
-              </h1>
-              <p className="text-base text-white/80 leading-relaxed max-w-[500px] font-medium">
-                Join the exclusive waitlist and be among the first to experience the next generation 
-                of creator tools and brand engagement platforms.
-              </p>
             </div>
 
             {/* Form Section */}
@@ -129,18 +140,20 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
                 <option value="all">All of the above</option>
               </Select>
 
-              <Button 
+              <button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white px-6 py-4 rounded-xl font-semibold hover:opacity-90 hover:scale-[1.02] transition-all duration-200 ease-out text-base h-auto"
+                className={cn(styles.buttonPrimary, "w-full px-6 py-4 text-base font-semibold")}
+                style={{ borderRadius: 'var(--radius)' }}
               >
                 Reserve My Spot
-              </Button>
+              </button>
             </form>
 
             {/* Divider */}
             <div 
               className={cn(
-                "w-full h-px bg-gradient-to-r from-orange-400/80 to-pink-500/80 transition-all duration-700 ease-out transform",
+                styles.accentLine,
+                "transition-all duration-700 ease-out transform",
                 isOpen ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
               )}
               style={{ transitionDelay: isOpen ? "600ms" : "0ms" }}
@@ -149,41 +162,52 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
             {/* Early Access Benefits */}
             <div 
               className={cn(
-                "space-y-6 transition-all duration-700 ease-out transform",
+                "space-y-8 transition-all duration-700 ease-out transform",
                 isOpen ? "translate-y-0 opacity-100" : "translate-y-[20px] opacity-0"
               )}
               style={{ transitionDelay: isOpen ? "700ms" : "0ms" }}
             >
-              <h2 className="text-2xl font-black text-white">Early Access Benefits:</h2>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <CheckIcon className="w-4 h-4 text-green-400" />
+              <div className="space-y-8">
+                <h2 className="text-2xl font-semibold" style={{ color: 'var(--color-text-primary)' }}>Early Access Benefits</h2>
+                
+                <div className="grid gap-6">
+                  {/* Priority Access Card */}
+                  <div className={styles.benefitCard}>
+                    <div className={cn(styles.benefitIcon, styles.priorityIcon)}>
+                      <ZapIcon className="w-6 h-6" style={{ color: 'rgb(34, 197, 94)' }} />
+                    </div>
+                    <h3 className="text-lg font-medium mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                      Priority Access
+                    </h3>
+                    <p className="font-light leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                      Be the first to access new features and tools before public release. Get exclusive early access to beta features and shape the future of the platform.
+                    </p>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">Priority Access</h3>
-                    <p className="text-white/70 text-sm font-medium">Be the first to access new features and tools before public release.</p>
-                  </div>
-                </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
-                    <ShieldIcon className="w-4 h-4 text-blue-400" />
+                  {/* Exclusive Pricing Card */}
+                  <div className={styles.benefitCard}>
+                    <div className={cn(styles.benefitIcon, styles.pricingIcon)}>
+                      <CrownIcon className="w-6 h-6" style={{ color: 'rgb(59, 130, 246)' }} />
+                    </div>
+                    <h3 className="text-lg font-medium mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                      Exclusive Pricing
+                    </h3>
+                    <p className="font-light leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                      Lock in special early-bird pricing with up to 50% off premium features. Secure lifetime discounts and exclusive member rates.
+                    </p>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">Exclusive Pricing</h3>
-                    <p className="text-white/70 text-sm font-medium">Lock in special early-bird pricing with up to 50% off premium features.</p>
-                  </div>
-                </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
-                    <TrendingUpIcon className="w-4 h-4 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">Direct Influence</h3>
-                    <p className="text-white/70 text-sm font-medium">Shape the platform with your feedback and feature requests.</p>
+                  {/* Direct Influence Card */}
+                  <div className={styles.benefitCard}>
+                    <div className={cn(styles.benefitIcon, styles.influenceIcon)}>
+                      <UsersIcon className="w-6 h-6" style={{ color: 'rgb(168, 85, 247)' }} />
+                    </div>
+                    <h3 className="text-lg font-medium mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                      Direct Influence
+                    </h3>
+                    <p className="font-light leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                      Shape the platform with your feedback and feature requests. Join our exclusive community and have direct input on product development.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -197,7 +221,7 @@ export const GetLinkPopup: React.FC<GetLinkPopupProps> = ({ isOpen, onClose }) =
               )}
               style={{ transitionDelay: isOpen ? "800ms" : "0ms" }}
             >
-              <p className="text-white/50 text-xs">
+              <p className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
                 By joining, you agree to receive updates about Moguls. Unsubscribe anytime.
               </p>
             </div>
